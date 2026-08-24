@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0.0",
+  "metadata": {
+    "student_name": "Mai Hồng Sơn",
+    "student_id": "2A202601921",
+    "group_id": "1921",
+    "submitted_at": "2026-08-24T12:08:00+07:00"
+  },
+  "industry": "education-ai-tutor",
+  "product_context": {
+    "product_name": "EduMentor AI - Trợ lý gia sư và phản hồi học tập cá nhân hóa",
+    "product_stage": "pilot",
+    "problem_statement": "Học sinh THPT và sinh viên đại học thiếu sự hỗ trợ giải đáp bài tập 1-1 kịp thời ngoài giờ học; giáo viên bị quá tải khi chấm và giải thích chi tiết hàng trăm bài tập tự luận mỗi tuần.",
+    "target_users": [
+      "Học sinh THPT và sinh viên đại học tự học",
+      "Giáo viên bộ môn và giảng viên phụ trách lớp",
+      "Phụ huynh học sinh theo dõi tiến độ"
+    ],
+    "value_hypothesis": "Cung cấp gợi ý tư duy theo phương pháp Socratic giúp tăng 25% hiệu quả tự học và giảm 40% thời gian giáo viên phải giải đáp các câu hỏi lặp lại.",
+    "in_scope": [
+      "Gợi ý phương pháp giải theo từng bước và giải thích khái niệm lý thuyết",
+      "Tạo câu hỏi ôn tập tương tác dựa trên chuẩn kiến thức bài học",
+      "Hỗ trợ giáo viên chấm nháp và gợi ý phản hồi chi tiết cho bài tập tự luận"
+    ],
+    "non_goals": [
+      "Không giải hộ trọn vẹn bài tập về nhà hoặc giải đề thi trực tiếp",
+      "Không tự động cập nhật điểm chính thức vào học bạ khi chưa có giáo viên phê duyệt",
+      "Không thay thế vai trò giảng dạy trực tiếp của giáo viên"
+    ],
+    "user_journey_moment": "Khi học sinh đang tự học tại nhà gặp bài tập khó, hoặc khi giáo viên mở giao diện xem xét bài nộp tự luận của học sinh.",
+    "target_launch_or_review_date": "2026-11-30",
+    "automation_level": "decision-support",
+    "fallback_experience": "Khi AI nhận diện độ tin cậy thấp dưới 80%, gặp chủ đề nhạy cảm hoặc lỗi hệ thống, giao diện lập tức chuyển sang chế độ tham khảo sách giáo khoa chuẩn và cung cấp nút 'Gửi câu hỏi cho giáo viên bộ môn'.",
+    "decision_reversibility": "reversible"
+  },
+  "system_profile": {
+    "purpose": "Hỗ trợ học sinh rèn luyện tư duy tự học thông qua đối thoại gợi mở Socratic và hỗ trợ giáo viên chấm nháp bài tập nhanh chóng, chính xác.",
+    "user_groups": [
+      "Học sinh từ 15 đến 22 tuổi",
+      "Giáo viên trung học phổ thông và giảng viên đại học",
+      "Cán bộ quản lý chuyên môn nhà trường"
+    ],
+    "decision_impact": "Ảnh hưởng trực tiếp đến nhận thức kiến thức, thói quen tư duy của học sinh và hỗ trợ đánh giá quá trình học tập của giáo viên.",
+    "data_types": [
+      "Câu hỏi và bài làm tự luận của học sinh",
+      "Dữ liệu tương tác học tập và lịch sử hỏi đáp",
+      "Giáo trình, tài liệu tham khảo và rubric chấm điểm chuẩn"
+    ],
+    "deployment_context": "Triển khai trên nền tảng đám mây an toàn, tích hợp qua cổng thông tin Web Portal và ứng dụng di động của trường học.",
+    "target_markets": [
+      "Việt Nam",
+      "Thị trường Đông Nam Á (khối trường song ngữ và quốc tế)"
+    ],
+    "system_boundary": {
+      "model": "Mô hình ngôn ngữ lớn (LLM) fine-tuned kết hợp kiến trúc RAG tra cứu tri thức chuẩn giáo trình",
+      "application": "Hệ thống Web và Mobile EduMentor Platform tích hợp hệ thống quản lý học tập LMS",
+      "people": [
+        "Học sinh tự học",
+        "Giáo viên bộ môn phê duyệt phản hồi",
+        "Chuyên gia thẩm định nội dung sư phạm"
+      ],
+      "vendors": [
+        "Nhà cung cấp hạ tầng Cloud và LLM API (OpenAI/Azure OpenAI)",
+        "Nền tảng Quản lý Học tập LMS (Moodle/Canvas)"
+      ],
+      "upstream_inputs": [
+        "Đề bài và câu hỏi của học sinh",
+        "Sách giáo khoa và tài liệu chuẩn từ Bộ GD&ĐT",
+        "Tiêu chí chấm điểm và rubric từ giáo viên"
+      ],
+      "downstream_decisions": [
+        "Gợi ý phương pháp giải và câu hỏi dẫn dắt cho học sinh",
+        "Báo cáo phân tích điểm mạnh/điểm yếu học tập định kỳ",
+        "Điểm số nháp và nhận xét đề xuất để giáo viên xem xét duyệt"
+      ]
+    }
+  },
+  "industry_risk_snapshot": {
+    "harm_severity": 3,
+    "high_stakes": 1,
+    "sensitive_data": 3,
+    "affected_scale": 4,
+    "human_review_need": 5,
+    "rationale": "Ngành giáo dục có tính rủi ro đặc thù: Tác hại ở mức trung bình (harm_severity=3) do lỗi kiến thức/hallucination có thể gây hiểu sai bài học nhưng sửa chữa được; mức độ quyết định trực tiếp thấp (high_stakes=1) vì hệ thống chỉ đóng vai trò hỗ trợ gợi ý và chấm nháp (decision-support), hoàn toàn có thể đảo ngược; dữ liệu học sinh cần được bảo vệ cẩn trọng (sensitive_data=3); quy mô mở rộng trên toàn hệ thống trường học là diện rộng (affected_scale=4); do đó nhu cầu giám sát của giáo viên và chuyên gia sư phạm là tối cao (human_review_need=5) nhằm ngăn chặn việc truyền bá kiến thức sai lệch hoặc thiên vị đánh giá."
+  },
+  "legal_classification": {
+    "vietnam": {
+      "status": "medium-risk",
+      "rationale": "Căn cứ Điều 20 Nghị định 13/2023/NĐ-CP, việc xử lý dữ liệu học sinh vị thành niên bắt buộc phải có sự đồng ý của phụ huynh và thực hiện đánh giá tác động DPIA trước khi triển khai chính thức.",
+      "source_ids": ["SRC-03"]
+    },
+    "eu": {
+      "status": "high-risk",
+      "rationale": "Căn cứ Phụ lục III của EU AI Act (Regulation 2024/1689), các hệ thống AI dùng để đánh giá kết quả học tập và phân loại học sinh thuộc danh mục High-Risk AI, đòi hỏi quy trình quản lý rủi ro và giám sát con người nghiêm ngặt.",
+      "source_ids": ["SRC-04"]
+    },
+    "other_markets": "Thị trường Đông Nam Á: Áp dụng khung hướng dẫn AI có trách nhiệm của ASEAN (ASEAN Responsible AI Guide) và luật dữ liệu sở tại.",
+    "legal_review_required": true
+  },
+  "product_metrics": {
+    "success_kpi": "Tỷ lệ học sinh cải thiện kết quả tự học đạt tối thiểu 25% và giáo viên giảm thời gian chấm nháp bài tập tối thiểu 40% trong kỳ học thử nghiệm.",
+    "risk_kri": "Tỷ lệ học sinh khiếu nại về gợi ý chấm điểm hoặc phản hồi của AI Tutor duy trì ở mức dưới 3.0% tổng số phiên tương tác.",
+    "guardrail_metric": "Tỷ lệ Hallucination không có nguồn trích dẫn giáo trình phải duy trì tuyệt đối dưới 1.0% và 0 sự cố rò rỉ dữ liệu cá nhân PII.",
+    "review_cadence": "Hàng tuần trong giai đoạn Pilot và kích hoạt đánh giá khẩn cấp ngay khi có sự cố sai lệch kiến thức nghiêm trọng."
+  },
+  "release_decision": {
+    "accountable_product_owner": "Lead Educational AI Product Manager",
+    "risk_acceptance_owner": "Head of Product & Educational Quality Board",
+    "independent_reviewer": "Independent AI Safety & Privacy Auditor",
+    "decision": "conditional-go",
+    "release_blockers": [
+      "GAP-01: Hoàn thành cơ chế ẩn danh và cổng ký duyệt điểm của giáo viên",
+      "GAP-02: Đạt độ chính xác RAG Grounding tối thiểu 98% trên bộ test sư phạm",
+      "GAP-03: Hoàn tất phê duyệt đánh giá tác động dữ liệu DPIA theo Nghị định 13"
+    ],
+    "release_conditions": [
+      "Chỉ triển khai thử nghiệm trên tối đa 500 học sinh có văn bản đồng ý của phụ huynh",
+      "Giáo viên bộ môn bắt buộc trực tiếp duyệt mọi phản hồi trước khi xuất điểm chính thức"
+    ],
+    "next_review_trigger": "2026-11-30 hoặc khi tỷ lệ khiếu nại của học sinh vượt quá ngưỡng 3% trong 2 tuần liên tiếp",
+    "residual_risk_rationale": "Mức rủi ro tồn dư được chấp nhận ở mức thấp do hệ thống chỉ đóng vai trò hỗ trợ gợi ý (decision-support), giáo viên luôn giữ quyền quyết định cuối cùng và mọi quyết định đều có thể đảo ngược."
+  }
+}
